@@ -43,7 +43,7 @@ func longestOnes(A []int, K int) int {
 			}
 		}
 		tail++
-		fmt.Printf("head:%d tail:%d K:%d max:%d\n", head, tail, K, max)
+		// fmt.Printf("head:%d tail:%d K:%d max:%d\n", head, tail, K, max)
 	}
 	if max < tail-head {
 		max = tail - head
