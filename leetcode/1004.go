@@ -36,9 +36,10 @@ func longestOnes(A []int, K int) int {
 				if max < tail-head {
 					max = tail - head
 				}
-				for A[head] != 0 {
+				for A[head] == 1 {
 					head++
 				}
+				head++
 			}
 		}
 		tail++
