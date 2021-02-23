@@ -9,5 +9,6 @@ func main() {
 	// leetcode.Test784()
 	// leetcode.Test1004()
 	// leetcode.Test697()
-	leetcode.Test766()
+	// leetcode.Test766()
+	leetcode.Test1052()
 }
