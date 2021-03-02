@@ -11,7 +11,7 @@ type NumArray struct {
 	array []int
 }
 
-func Constructor(nums []int) NumArray {
+func Constructor303(nums []int) NumArray {
 	return NumArray{array: nums}
 }
 
@@ -27,7 +27,7 @@ func (this *NumArray) SumRange(i int, j int) int {
 // 内存消耗：9.4 MB, 在所有 Go 提交中击败了64.08% 的用户
 
 func Test303() {
-	nums := Constructor([]int{-2, 0, 3, -5, 2, -1})
+	nums := Constructor303([]int{-2, 0, 3, -5, 2, -1})
 	fmt.Printf("%v\n", nums.SumRange(0, 2))
 	fmt.Printf("%v\n", nums.SumRange(2, 5))
 	fmt.Printf("%v\n", nums.SumRange(0, 5))
