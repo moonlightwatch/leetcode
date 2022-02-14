@@ -9,6 +9,7 @@ import (
 // 你设计的解决方案必须满足 O(log n) 时间复杂度和 O(1) 空间复杂度。
 
 func singleNonDuplicate(nums []int) int {
+	// 有序数组，只需奇数位和下一个比较，不同则唯一
 	i := 0
 	for i = 0; i < len(nums)-1; i += 2 {
 		if nums[i] != nums[i+1] {

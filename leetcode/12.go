@@ -27,6 +27,7 @@ import (
 // 给你一个整数，将其转为罗马数字。
 
 func intToRoman(num int) string {
+	// 类似辗转相除
 	roman := ""
 	if num >= 1000 {
 		roman = strings.Repeat("M", num/1000)
