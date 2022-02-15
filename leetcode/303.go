@@ -15,10 +15,10 @@ func Constructor303(nums []int) NumArray {
 	return NumArray{array: nums}
 }
 
-func (this *NumArray) SumRange(i int, j int) int {
+func (A *NumArray) SumRange(i int, j int) int {
 	result := 0
 	for index := i; index <= j; index++ {
-		result += this.array[index]
+		result += A.array[index]
 	}
 	return result
 }
