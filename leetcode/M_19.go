@@ -1,13 +1,6 @@
 package leetcode
 
-import "fmt"
-
 // 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	// 将链表各个节点存入数组
@@ -49,29 +42,4 @@ func Test19() {
 	_printListNode(removeNthFromEnd(_makeListNode([]int{1, 2, 3, 4, 5}), 2)) // 1 2 3 5
 	_printListNode(removeNthFromEnd(_makeListNode([]int{1}), 1))             //
 	_printListNode(removeNthFromEnd(_makeListNode([]int{1, 2}), 1))          // 1
-}
-
-func _makeListNode(items []int) *ListNode {
-	if len(items) == 0 {
-		return nil
-	}
-	head := &ListNode{Val: items[0], Next: nil}
-	tail := head
-	cache := head
-	for _, v := range items {
-		cache.Val = v
-		cache.Next = &ListNode{}
-		tail = cache
-		cache = cache.Next
-	}
-	tail.Next = nil
-	return head
-}
-func _printListNode(head *ListNode) {
-	cache := head
-	for cache != nil {
-		fmt.Printf("%d ", cache.Val)
-		cache = cache.Next
-	}
-	fmt.Println()
 }
