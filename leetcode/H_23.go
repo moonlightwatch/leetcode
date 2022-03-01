@@ -15,25 +15,28 @@ package leetcode
 // lists[i].length 的总和不超过 10^4
 
 func mergeKLists(lists []*ListNode) *ListNode {
+	// 直接遍历
+
 	k := len(lists)
-	var head *ListNode
-	var tail *ListNode
+	var head *ListNode // 存储结果的头节点
+	var tail *ListNode // 存储结果的尾节点，用于添加节点
 	for {
-		min := 100000
-		markIndex := -1
-		for i := 0; i < k; i++ {
-			if lists[i] != nil {
-				if lists[i].Val < min {
+		min := 100000            // 设置一个极大值，用于保存头部最小的链表的值
+		markIndex := -1          // 记录头部最小的链表的索引
+		for i := 0; i < k; i++ { // 循环所有链表头部
+			if lists[i] != nil { // 仅非空链表参与判断
+				if lists[i].Val < min { // 如头部值较小，则记录值和索引
 					min = lists[i].Val
 					markIndex = i
 				}
 			}
 		}
-		if markIndex != -1 {
+		if markIndex != -1 { // 若记录到最小值，则将此链表的头部向后移动一次
 			lists[markIndex] = lists[markIndex].Next
 		} else {
 			break
 		}
+		// 想结果链表添加寻得的最小值节点
 		if head == nil {
 			head = &ListNode{Val: min}
 			tail = head
