@@ -17,6 +17,8 @@ import (
 // 请你返回一个整数数组 answer ，其中 answer[i] 是第 i 个查询的答案。
 
 func platesBetweenCandles(s string, queries [][]int) []int {
+	// 执行用时：240 ms, 在所有 Go 提交中击败了100.00% 的用户
+	// 内存消耗：20.8 MB, 在所有 Go 提交中击败了26.92% 的用户
 	l := len(s)
 	// 先做统计工作
 	leftCandleMap := make([]int, l)       // 记录各个位置上，左侧最近的蜡烛位置
