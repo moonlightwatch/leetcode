@@ -27,11 +27,6 @@ import "fmt"
 
 // }
 
-type Node struct {
-	Value     int
-	Ancestors []int
-}
-
 func checkWays(pairs [][]int) int {
 	if len(pairs) == 1 { // 特殊情况：只有一个数对的情况下，仅有一种情况符合条件
 		return 1
