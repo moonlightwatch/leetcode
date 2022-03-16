@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	leetcode.Test32()
+	leetcode.Test432()
 }
