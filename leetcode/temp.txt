@@ -1,0 +1,10 @@
+for this.tab[key].Next != nil && this.tab[key].Next.Count <= this.tab[key].Count {
+		this.tab[key].Next.S, this.tab[key].S = this.tab[key].S, this.tab[key].Next.S
+		this.tab[key].Next.Count, this.tab[key].Count = this.tab[key].Count, this.tab[key].Next.Count
+		this.tab[this.tab[key].S] = this.tab[key]
+		this.tab[this.tab[key].Next.S] = this.tab[key].Next
+		this.tab[key] = this.tab[key].Next
+	}
+	if this.tab[key].Next == nil {
+		this.tail = this.tab[key]
+	}
