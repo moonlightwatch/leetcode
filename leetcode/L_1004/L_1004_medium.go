@@ -4,8 +4,11 @@ import (
 	"fmt"
 )
 
-// 给定一个由若干 0 和 1 组成的数组 A，我们最多可以将 K 个值从 0 变成 1 。
-// 返回仅包含 1 的最长（连续）子数组的长度。
+// https://leetcode-cn.com/problems/max-consecutive-ones-iii/
+
+// 1004. 最大连续1的个数 III
+
+// 给定一个二进制数组 nums 和一个整数 k ，如果可以翻转最多k 个 0 ，则返回 数组中连续 1 的最大个数 。
 
 /*
 

@@ -2,8 +2,14 @@ package L_1380
 
 import "fmt"
 
+// https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/
+
+// 1380. 矩阵中的幸运数
+
 // 给你一个 m * n 的矩阵，矩阵中的数字 各不相同 。请你按 任意 顺序返回矩阵中的所有幸运数。
+
 // 幸运数是指矩阵中满足同时下列两个条件的元素：
+
 //     在同一行的所有元素中最小
 //     在同一列的所有元素中最大
 
