@@ -2,7 +2,11 @@ package L_0338
 
 import "fmt"
 
-// 给定一个非负整数 num。对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回。
+// https://leetcode-cn.com/problems/counting-bits/
+
+// 338. 比特位计数
+
+// 给你一个整数 n ，对于 0 <= i <= n 中的每个 i ，计算其二进制表示中 1 的个数 ，返回一个长度为 n + 1 的数组 ans 作为答案。
 
 /*
 
