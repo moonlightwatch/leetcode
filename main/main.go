@@ -1,9 +1,9 @@
 package main
 
 import (
-	"leetcode/leetcode"
+	"leetcode/leetcode/L_2043"
 )
 
 func main() {
-	leetcode.Test720()
+	L_2043.Test2043()
 }
