@@ -24,18 +24,23 @@ import (
 // 单词里只包含字母，不会出现省略号或者其他标点符号。
 
 func mostCommonWord(paragraph string, banned []string) string {
-	// 移除标点符号
-	paragraph = strings.ReplaceAll(paragraph, "!", "  ")
-	paragraph = strings.ReplaceAll(paragraph, "?", "  ")
-	paragraph = strings.ReplaceAll(paragraph, "'", "  ")
-	paragraph = strings.ReplaceAll(paragraph, ",", "  ")
-	paragraph = strings.ReplaceAll(paragraph, ";", "  ")
-	paragraph = strings.ReplaceAll(paragraph, ".", "  ")
-	paragraph = strings.ReplaceAll(paragraph, " ", "  ")
-
-	// 转小写，两端加空格，用于下一步移除禁用词
-	paragraph = fmt.Sprintf(" %s ", strings.ToLower(paragraph))
-
+	builder := strings.Builder{}
+	replaceItems := "!?',;. "
+	builder.WriteRune(' ')
+	for _, c := range paragraph {
+		if strings.ContainsRune(replaceItems, c) {
+			builder.WriteRune(' ')
+			builder.WriteRune(' ')
+			continue
+		}
+		if c < 'a' {
+			builder.WriteRune(rune(c + 32))
+		} else {
+			builder.WriteRune(c)
+		}
+	}
+	builder.WriteRune(' ')
+	paragraph = builder.String()
 	// 移除禁用词
 	for _, w := range banned {
 		r := fmt.Sprintf(" %s ", strings.ToLower(w))
