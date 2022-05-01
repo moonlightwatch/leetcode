@@ -21,17 +21,16 @@ type TreeNode struct {
 func getAllElements(root1 *TreeNode, root2 *TreeNode) []int {
 	result := []int{} // 定义结果集
 
-	// 广度优先遍历，同时搜索两颗树
+	// 遍历，同时搜索两颗树
 	cache := []*TreeNode{root1, root2}
-	for len(cache) > 0 {
-		curNode := cache[0]
-		cache = cache[1:]
-		if curNode == nil { // 不处理nil
-			continue
+	i := 0
+	for len(cache) > i {
+		if cache[i] != nil { // 不处理nil
+			result = append(result, cache[i].Val) // 将遍历到的节点值加入结果集
+			cache = append(cache, cache[i].Left)
+			cache = append(cache, cache[i].Right)
 		}
-		result = append(result, curNode.Val) // 将遍历到的节点值加入结果集
-		cache = append(cache, curNode.Left)
-		cache = append(cache, curNode.Right)
+		i++
 	}
 
 	// 排个序
